@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navira Life Essentials Pvt. Ltd.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+      }
+
+      /* Animated underline effect */
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: #15803d; /* green-700 */
+        transition: width 0.3s ease-in-out;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .nav-link.active::after {
+        width: 100%;
+      }
+
+      .nav-link.active {
+        color: #15803d;
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-gray-800">
+    <!-- Navbar -->
+    <header
+      id="navbar"
+      class="fixed top-0 left-0 w-full z-50 bg-white border-b border-gray-200 shadow-sm transition-all duration-300"
+    >
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between py-2 px-6 lg:px-12"
+      >
+        <!-- LOGO -->
+        <a href="#" class="flex items-center space-x-2">
+          <img
+            src="navira.png"
+            alt="Navira Logo"
+            class="h-14 md:h-16 w-auto object-contain transition-all duration-300"
+          />
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav id="nav-links" class="hidden md:flex space-x-8 font-semibold">
+          <a
+            href="#about"
+            class="nav-link text-black hover:text-green-700 transition-colors duration-300 relative"
+            >About</a
+          >
+          <a
+            href="#vision"
+            class="nav-link text-black hover:text-green-700 transition-colors duration-300 relative"
+            >Vision</a
+          >
+          <a
+            href="#verticals"
+            class="nav-link text-black hover:text-green-700 transition-colors duration-300 relative"
+            >Our Verticals</a
+          >
+          <a
+            href="#contact"
+            class="nav-link text-black hover:text-green-700 transition-colors duration-300 relative"
+            >Join</a
+          >
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="menu-toggle"
+          class="md:hidden text-black text-3xl focus:outline-none font-bold"
+        >
+          ☰
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden flex-col space-y-4 bg-white border-t border-gray-200 py-4 px-6 md:hidden font-semibold"
+      >
+        <a href="#about" class="text-black hover:text-green-700 transition"
+          >About</a
+        >
+        <a href="#vision" class="text-black hover:text-green-700 transition"
+          >Vision</a
+        >
+        <a href="#verticals" class="text-black hover:text-green-700 transition"
+          >Our Verticals</a
+        >
+        <a href="#contact" class="text-black hover:text-green-700 transition"
+          >Join</a
+        >
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="relative min-h-screen flex flex-col justify-center items-center text-center bg-white px-6"
+    >
+      <div class="max-w-3xl mx-auto mt-24">
+        <h1 class="text-4xl md:text-6xl font-bold text-green-600 leading-tight">
+          A Community That Nourishes Your Mind, Body, and Soul
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-gray-700 text-justify">
+          Join a movement that connects hearts, inspires growth, and promotes
+          wellness. At Navira Life Essentials, we believe in holistic living —
+          fostering connection, learning, and nourishment for a balanced life.
+        </p>
+        <div
+          class="flex flex-wrap justify-center gap-4 mt-8 text-lg font-medium"
+        >
+          <a
+            href="#community"
+            class="bg-blue-700 text-white px-6 py-3 rounded-xl shadow-md hover:bg-blue-800 transition"
+            >🌱 Join the Community</a
+          >
+          <a
+            href="#meals"
+            class="bg-green-700 text-white px-6 py-3 rounded-xl shadow-md hover:bg-green-800 transition"
+            >🍲 Explore Healthy Meals</a
+          >
+          <a
+            href="#events"
+            class="bg-purple-700 text-white px-6 py-3 rounded-xl shadow-md hover:bg-purple-800 transition"
+            >🎓 Discover Growth Events</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-white">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-6">
+          About Navira Life Essentials Pvt. Ltd.
+        </h2>
+        <p class="text-gray-700 text-justify leading-relaxed">
+          Because a meaningful life begins with connection. At Navira Life
+          Essentials, we bring together wellness, learning, and community
+          living. Our mission is simple — to help individuals, families, and
+          communities live healthier, happier, and more connected lives. Through
+          our three verticals — Community Ecosystem, Learning Events, and
+          Healthy Meal Services — we are building a holistic way of living for
+          all ages.
+        </p>
+        <a
+          href="#vision"
+          class="inline-block mt-8 bg-green-700 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-800 transition"
+          >Learn More About Our Story →</a
+        >
+      </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section id="vision" class="py-20 bg-white px-6">
+      <div
+        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start"
+      >
+        <div>
+          <h3 class="text-3xl font-bold text-green-900 mb-4">Our Vision</h3>
+          <p class="text-gray-700 text-justify leading-relaxed">
+            To create a compassionate and empowered community where people
+            support one another, grow together, and thrive with purpose —
+            physically, mentally, and socially.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-3xl font-bold text-green-900 mb-4">Our Mission</h3>
+          <p class="text-gray-700 text-justify leading-relaxed">
+            To enrich lives by delivering essential services that promote
+            wellness, personal growth, and connectedness — through community
+            engagement, experiential learning, and wholesome nutrition.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Verticals -->
+    <section id="verticals" class="py-20 px-6 bg-white">
+      <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-4xl font-bold text-green-800 mb-12">Our Verticals</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <!-- Card 1 -->
+          <div
+            id="community"
+            class="flex flex-col justify-between rounded-2xl bg-white border-2 border-black shadow-sm hover:shadow-xl p-8 transition h-full"
+          >
+            <div>
+              <h3 class="text-2xl font-semibold text-green-900 mb-3">
+                Navira Community Ecosystem
+              </h3>
+              <p class="text-gray-700 text-justify leading-relaxed mb-4">
+                Connecting Hearts. Building Support. Sharing Growth. A vibrant
+                community of students, parents, and senior citizens who grow
+                together through mentorship, dialogue, and engagement.
+              </p>
+              <ul
+                class="text-gray-700 text-left list-disc list-inside mb-6 space-y-1"
+              >
+                <li>Mentorship & Guidance for Students</li>
+                <li>Parent Circles & Family Support</li>
+                <li>Senior Citizen Engagement Programs</li>
+                <li>Social Impact & Volunteering Drives</li>
+              </ul>
+            </div>
+            <a
+              href="#"
+              class="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition mt-auto"
+            >
+              Join the Navira Community
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            id="events"
+            class="flex flex-col justify-between rounded-2xl bg-white border-2 border-black shadow-sm hover:shadow-xl p-8 transition h-full"
+          >
+            <div>
+              <h3 class="text-2xl font-semibold text-green-900 mb-3">
+                Navira Events – Learn | Grow | Celebrate
+              </h3>
+              <p class="text-gray-700 text-justify leading-relaxed mb-4">
+                Creating Experiences that Transform Lives. Navira Events curates
+                wellness retreats, leadership sessions, and family learning
+                programs that inspire growth and connection.
+              </p>
+              <ul
+                class="text-gray-700 text-left list-disc list-inside mb-6 space-y-1"
+              >
+                <li>Personal Development & Life Skills</li>
+                <li>Family & Youth Growth Events</li>
+                <li>Corporate Wellness Programs</li>
+                <li>Community Celebrations</li>
+              </ul>
+            </div>
+            <a
+              href="#"
+              class="inline-block bg-purple-700 text-white px-6 py-3 rounded-lg hover:bg-purple-800 transition mt-auto"
+            >
+              Explore Upcoming Events
+            </a>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            id="meals"
+            class="flex flex-col justify-between rounded-2xl bg-white border-2 border-black shadow-sm hover:shadow-xl p-8 transition h-full"
+          >
+            <div>
+              <h3 class="text-2xl font-semibold text-green-900 mb-3">
+                Navira Meals – Nourish Your Life
+              </h3>
+              <p class="text-gray-700 text-justify leading-relaxed mb-4">
+                Wholesome Nutrition for a Healthier Tomorrow. Navira Meals
+                delivers balanced, home-cooked goodness designed to energize
+                your body and mind.
+              </p>
+              <ul
+                class="text-gray-700 text-left list-disc list-inside mb-6 space-y-1"
+              >
+                <li>Personalized Healthy Meal Plans</li>
+                <li>Senior-Friendly & Family Nutrition</li>
+                <li>Student Meals & Brain Food</li>
+                <li>Corporate Meal Solutions</li>
+              </ul>
+            </div>
+            <a
+              href="#"
+              class="inline-block bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800 transition mt-auto"
+            >
+              Order Your Meal Plan
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-green-900 text-white py-12">
+      <div class="max-w-6xl mx-auto text-center space-y-6">
+        <h3 class="text-2xl font-semibold">🌿 Join the Navira Movement</h3>
+        <div
+          class="flex flex-wrap justify-center gap-4 mt-4 text-lg font-medium"
+        >
+          <a
+            href="#"
+            class="bg-white text-green-900 px-6 py-3 rounded-xl hover:bg-green-100 transition"
+            >🤝 Become a Member</a
+          >
+          <a
+            href="#"
+            class="bg-white text-green-900 px-6 py-3 rounded-xl hover:bg-green-100 transition"
+            >🧘 Attend an Event</a
+          >
+          <a
+            href="#"
+            class="bg-white text-green-900 px-6 py-3 rounded-xl hover:bg-green-100 transition"
+            >🍎 Start Your Nutrition Journey</a
+          >
+        </div>
+        <p class="mt-6 text-sm text-green-200">
+          © 2025 Navira Life Essentials Pvt. Ltd. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Active nav animation on click
+      const navLinks = document.querySelectorAll(".nav-link");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.forEach((l) => l.classList.remove("active"));
+          link.classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
