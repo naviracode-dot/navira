@@ -4,12 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Navira Life Essentials Pvt. Ltd.</title>
+    <meta name="theme-color" content="#047857" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap"
       rel="stylesheet"
     />
     <style>
+      :root {
+        --header-height: 75px; /* keep in sync with header actual height */
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: var(--header-height); /* ensures clicking anchors doesn't hide content under fixed header */
+      }
+
       body {
         font-family: "Inter", sans-serif;
       }
@@ -28,7 +38,7 @@
         left: 0;
         width: 0%;
         height: 2px;
-        background-color: #15803d; /* green-700 */
+        background-color: #fff;
         transition: width 0.3s ease-in-out;
       }
 
@@ -41,312 +51,486 @@
       }
 
       .nav-link.active {
-        color: #15803d;
+        color: #fff;
+      }
+
+      /* Small aesthetic safe-fallback for images */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Make sure intl tel input looks good on dark bg */
+      #whatsapp,
+      #whatsapp.iti__input,
+      .iti__selected-flag,
+      .iti__flag-container,
+      .iti__dial-code {
+        color: white !important;
+        background-color: transparent !important;
+        border-color: white !important;
+      }
+
+      /* Country list dropdown should be white */
+      .iti__country-list {
+        background-color: white !important;
+        color: black !important;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Placeholder color */
+      #whatsapp::placeholder {
+        color: #fff !important;
+      }
+
+      /* Remove background from flag container */
+      .iti__flag-container {
+        background-color: transparent !important;
+      }
+
+      /* Input padding fix, so text does not overlap flag */
+      #whatsapp {
+        padding-left: 50px !important;
+      }
+
+      /* ease mobile-menu transition */
+      .mobile-menu-enter {
+        transform-origin: top;
+        transition: transform 180ms ease, opacity 180ms ease;
       }
     </style>
   </head>
 
-  <body class="bg-white text-gray-800">
+  <body class="bg-white text-gray-800 antialiased">
     <!-- Navbar -->
     <header
       id="navbar"
-      class="fixed top-0 left-0 w-full z-50 bg-white border-b border-gray-200 shadow-sm transition-all duration-300"
+      class="fixed top-0 left-0 w-full z-50 bg-green-700 border-b border-green-800 shadow-sm transition-all duration-300"
+      style="height: var(--header-height);"
     >
-      <div
-        class="max-w-7xl mx-auto flex items-center justify-between py-2 px-6 lg:px-12"
-      >
-        <!-- LOGO -->
-        <a href="#" class="flex items-center space-x-2">
+      <div class="max-w-7xl mx-auto flex items-center justify-between h-full py-2 px-6 lg:px-12">
+        <a href="#" class="flex items-center space-x-2" aria-label="Navira Home">
           <img
-            src="navira.png"
+            id="navbar-logo"
+            src="Navira1.png"
             alt="Navira Logo"
-            class="h-14 md:h-16 w-auto object-contain transition-all duration-300"
+            class="h-12 md:h-[56px] w-auto object-contain transition-all duration-300"
           />
         </a>
 
-        <!-- Desktop Menu -->
-        <nav id="nav-links" class="hidden md:flex space-x-8 font-semibold">
-          <a
-            href="#about"
-            class="nav-link text-black hover:text-green-700 transition-colors duration-300 relative"
-            >About</a
-          >
-          <a
-            href="#vision"
-            class="nav-link text-black hover:text-green-700 transition-colors duration-300 relative"
-            >Vision</a
-          >
-          <a
-            href="#verticals"
-            class="nav-link text-black hover:text-green-700 transition-colors duration-300 relative"
-            >Our Verticals</a
-          >
-          <a
-            href="#contact"
-            class="nav-link text-black hover:text-green-700 transition-colors duration-300 relative"
-            >Join</a
-          >
+        <!-- Desktop links -->
+        <nav id="nav-links" class="hidden md:flex space-x-6 font-semibold text-[115%] items-center">
+          <a href="#about" class="nav-link text-white relative">About</a>
+          <a href="#vision" class="nav-link text-white relative">Vision</a>
+          <a href="#verticals" class="nav-link text-white relative">Our Offerings</a>
+          <a href="#contact" class="nav-link text-white relative">Connect Now</a>
         </nav>
 
-        <!-- Mobile Menu Button -->
+        <!-- Mobile menu button -->
         <button
           id="menu-toggle"
-          class="md:hidden text-black text-3xl focus:outline-none font-bold"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          class="md:hidden text-white text-3xl focus:outline-none font-bold"
         >
           ☰
         </button>
       </div>
 
-      <!-- Mobile Menu -->
+      <!-- Mobile menu (hidden by default) -->
       <div
         id="mobile-menu"
-        class="hidden flex-col space-y-4 bg-white border-t border-gray-200 py-4 px-6 md:hidden font-semibold"
+        class="hidden flex-col space-y-2 bg-green-700 border-t border-green-800 py-4 px-6 md:hidden font-semibold text-lg text-center"
       >
-        <a href="#about" class="text-black hover:text-green-700 transition"
-          >About</a
-        >
-        <a href="#vision" class="text-black hover:text-green-700 transition"
-          >Vision</a
-        >
-        <a href="#verticals" class="text-black hover:text-green-700 transition"
-          >Our Verticals</a
-        >
-        <a href="#contact" class="text-black hover:text-green-700 transition"
-          >Join</a
-        >
+        <!-- make links white so they're visible on green -->
+        <a href="#about" class="block py-2 text-white">About</a>
+        <a href="#vision" class="block py-2 text-white">Vision</a>
+        <a href="#verticals" class="block py-2 text-white">Our Offerings</a>
+        <a href="#contact" class="block py-2 text-white">Connect Now</a>
       </div>
     </header>
 
     <!-- Hero Section -->
-    <section
-      class="relative min-h-screen flex flex-col justify-center items-center text-center bg-white px-6"
-    >
-      <div class="max-w-3xl mx-auto mt-24">
-        <h1 class="text-4xl md:text-6xl font-bold text-green-600 leading-tight">
-          A Community That Nourishes Your Mind, Body, and Soul
-        </h1>
-        <p class="mt-6 text-lg md:text-xl text-gray-700 text-justify">
-          Join a movement that connects hearts, inspires growth, and promotes
-          wellness. At Navira Life Essentials, we believe in holistic living —
-          fostering connection, learning, and nourishment for a balanced life.
-        </p>
-        <div
-          class="flex flex-wrap justify-center gap-4 mt-8 text-lg font-medium"
-        >
-          <a
-            href="#community"
-            class="bg-blue-700 text-white px-6 py-3 rounded-xl shadow-md hover:bg-blue-800 transition"
-            >🌱 Join the Community</a
-          >
-          <a
-            href="#meals"
-            class="bg-green-700 text-white px-6 py-3 rounded-xl shadow-md hover:bg-green-800 transition"
-            >🍲 Explore Healthy Meals</a
-          >
-          <a
-            href="#events"
-            class="bg-purple-700 text-white px-6 py-3 rounded-xl shadow-md hover:bg-purple-800 transition"
-            >🎓 Discover Growth Events</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 px-6 bg-white">
-      <div class="max-w-5xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-6">
-          About Navira Life Essentials Pvt. Ltd.
-        </h2>
-        <p class="text-gray-700 text-justify leading-relaxed">
-          Because a meaningful life begins with connection. At Navira Life
-          Essentials, we bring together wellness, learning, and community
-          living. Our mission is simple — to help individuals, families, and
-          communities live healthier, happier, and more connected lives. Through
-          our three verticals — Community Ecosystem, Learning Events, and
-          Healthy Meal Services — we are building a holistic way of living for
-          all ages.
-        </p>
-        <a
-          href="#vision"
-          class="inline-block mt-8 bg-green-700 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-800 transition"
-          >Learn More About Our Story →</a
-        >
-      </div>
-    </section>
-
-    <!-- Vision & Mission -->
-    <section id="vision" class="py-20 bg-white px-6">
-      <div
-        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start"
+    <main class="pt-[var(--header-height)]"> <!-- ensures page content starts below header -->
+      <section
+        class="relative min-h-screen flex flex-col justify-center items-center text-center bg-white px-6"
       >
-        <div>
-          <h3 class="text-3xl font-bold text-green-900 mb-4">Our Vision</h3>
-          <p class="text-gray-700 text-justify leading-relaxed">
-            To create a compassionate and empowered community where people
-            support one another, grow together, and thrive with purpose —
-            physically, mentally, and socially.
+        <div class="max-w-3xl mx-auto mt-8 md:mt-12">
+          <h1 class="text-4xl md:text-6xl font-bold text-green-600 leading-tight">
+            A Community That Nourishes Your Mind, Body, and Soul
+          </h1>
+          <p class="mt-6 text-lg md:text-xl text-gray-700 text-justify">
+            Join a movement that connects hearts, inspires growth, and promotes
+            wellness. At Navira Life Essentials, we believe in holistic living —
+            fostering connection, learning, and nourishment for a balanced life.
           </p>
-        </div>
-        <div>
-          <h3 class="text-3xl font-bold text-green-900 mb-4">Our Mission</h3>
-          <p class="text-gray-700 text-justify leading-relaxed">
-            To enrich lives by delivering essential services that promote
-            wellness, personal growth, and connectedness — through community
-            engagement, experiential learning, and wholesome nutrition.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Our Verticals -->
-    <section id="verticals" class="py-20 px-6 bg-white">
-      <div class="max-w-6xl mx-auto text-center">
-        <h2 class="text-4xl font-bold text-green-800 mb-12">Our Verticals</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <!-- Card 1 -->
           <div
-            id="community"
-            class="flex flex-col justify-between rounded-2xl bg-white border-2 border-black shadow-sm hover:shadow-xl p-8 transition h-full"
+            class="flex flex-wrap justify-center gap-4 mt-8 text-lg font-medium"
           >
-            <div>
-              <h3 class="text-2xl font-semibold text-green-900 mb-3">
-                Navira Community Ecosystem
-              </h3>
-              <p class="text-gray-700 text-justify leading-relaxed mb-4">
-                Connecting Hearts. Building Support. Sharing Growth. A vibrant
-                community of students, parents, and senior citizens who grow
-                together through mentorship, dialogue, and engagement.
-              </p>
-              <ul
-                class="text-gray-700 text-left list-disc list-inside mb-6 space-y-1"
-              >
-                <li>Mentorship & Guidance for Students</li>
-                <li>Parent Circles & Family Support</li>
-                <li>Senior Citizen Engagement Programs</li>
-                <li>Social Impact & Volunteering Drives</li>
-              </ul>
-            </div>
             <a
-              href="#"
-              class="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition mt-auto"
+              href="#community"
+              class="bg-purple-700 text-white px-6 py-3 rounded-xl shadow-md hover:bg-purple-800 transition"
+              >🌱 Join the Community</a
             >
-              Join the Navira Community
-            </a>
-          </div>
-
-          <!-- Card 2 -->
-          <div
-            id="events"
-            class="flex flex-col justify-between rounded-2xl bg-white border-2 border-black shadow-sm hover:shadow-xl p-8 transition h-full"
-          >
-            <div>
-              <h3 class="text-2xl font-semibold text-green-900 mb-3">
-                Navira Events – Learn | Grow | Celebrate
-              </h3>
-              <p class="text-gray-700 text-justify leading-relaxed mb-4">
-                Creating Experiences that Transform Lives. Navira Events curates
-                wellness retreats, leadership sessions, and family learning
-                programs that inspire growth and connection.
-              </p>
-              <ul
-                class="text-gray-700 text-left list-disc list-inside mb-6 space-y-1"
-              >
-                <li>Personal Development & Life Skills</li>
-                <li>Family & Youth Growth Events</li>
-                <li>Corporate Wellness Programs</li>
-                <li>Community Celebrations</li>
-              </ul>
-            </div>
             <a
-              href="#"
-              class="inline-block bg-purple-700 text-white px-6 py-3 rounded-lg hover:bg-purple-800 transition mt-auto"
+              href="#meals"
+              class="bg-orange-500 text-white px-6 py-3 rounded-xl shadow-md hover:bg-orange-600 transition"
+              >🍲 Explore Healthy Meals</a
             >
-              Explore Upcoming Events
-            </a>
-          </div>
-
-          <!-- Card 3 -->
-          <div
-            id="meals"
-            class="flex flex-col justify-between rounded-2xl bg-white border-2 border-black shadow-sm hover:shadow-xl p-8 transition h-full"
-          >
-            <div>
-              <h3 class="text-2xl font-semibold text-green-900 mb-3">
-                Navira Meals – Nourish Your Life
-              </h3>
-              <p class="text-gray-700 text-justify leading-relaxed mb-4">
-                Wholesome Nutrition for a Healthier Tomorrow. Navira Meals
-                delivers balanced, home-cooked goodness designed to energize
-                your body and mind.
-              </p>
-              <ul
-                class="text-gray-700 text-left list-disc list-inside mb-6 space-y-1"
-              >
-                <li>Personalized Healthy Meal Plans</li>
-                <li>Senior-Friendly & Family Nutrition</li>
-                <li>Student Meals & Brain Food</li>
-                <li>Corporate Meal Solutions</li>
-              </ul>
-            </div>
             <a
-              href="#"
-              class="inline-block bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800 transition mt-auto"
+              href="#events"
+              class="bg-blue-700 text-white px-6 py-3 rounded-xl shadow-md hover:bg-blue-800 transition"
+              >🎓 Discover Growth Events</a
             >
-              Order Your Meal Plan
-            </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Footer -->
-    <footer id="contact" class="bg-green-900 text-white py-12">
-      <div class="max-w-6xl mx-auto text-center space-y-6">
-        <h3 class="text-2xl font-semibold">🌿 Join the Navira Movement</h3>
+      <!-- About Section -->
+<section id="about" class="py-20 px-6 bg-white scroll-mt-28">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-green-600 mb-6">
+      About Navira Life Essentials Pvt. Ltd.
+    </h2>
+    <p class="text-gray-700 text-justify leading-relaxed">
+      Because a meaningful life begins with connection. At Navira Life
+      Essentials, we bring together wellness, learning, and community
+      living. Our mission is simple — to help individuals, families, and
+      communities live healthier, happier, and more connected lives. Through
+      our three offerings — Community Ecosystem, Learning Events, and
+      Healthy Meal Services — we are building a holistic way of living for
+      all ages.
+    </p>
+
+    <!-- Logo above button -->
+    <div class="mt-10 flex flex-col items-center">
+      <img 
+        src="navira2.png" 
+        alt="Navira Logo" 
+        class="w-[180px] md:w-[200px] h-auto mb-5 object-contain" 
+      />
+      <a
+        href="#vision"
+        class="inline-block bg-green-600 text-white px-6 py-3 text-center rounded-lg shadow-md hover:bg-green-800 transition"
+      >
+        Learn More About Our Story →
+      </a>
+    </div>
+  </div>
+</section>
+
+
+      <!-- Vision & Mission -->
+      <section id="vision" class="py-20 bg-white px-6">
         <div
-          class="flex flex-wrap justify-center gap-4 mt-4 text-lg font-medium"
+          class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start"
         >
-          <a
-            href="#"
-            class="bg-white text-green-900 px-6 py-3 rounded-xl hover:bg-green-100 transition"
-            >🤝 Become a Member</a
-          >
-          <a
-            href="#"
-            class="bg-white text-green-900 px-6 py-3 rounded-xl hover:bg-green-100 transition"
-            >🧘 Attend an Event</a
-          >
-          <a
-            href="#"
-            class="bg-white text-green-900 px-6 py-3 rounded-xl hover:bg-green-100 transition"
-            >🍎 Start Your Nutrition Journey</a
-          >
+          <div>
+            <h3 class="text-3xl font-bold text-green-600 mb-4">Our Vision</h3>
+            <p class="text-gray-700 text-justify leading-relaxed">
+              To create a compassionate and empowered community where people
+              support one another, grow together, and thrive with purpose — 
+              physically, mentally, and socially.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-3xl font-bold text-green-600 mb-4">Our Mission</h3>
+            <p class="text-gray-700 text-justify leading-relaxed">
+              To enrich lives by delivering essential services that promote
+              wellness, personal growth, and connectedness — through community
+              engagement, experiential learning, and wholesome nutrition.
+            </p>
+          </div>
         </div>
-        <p class="mt-6 text-sm text-green-200">
-          © 2025 Navira Life Essentials Pvt. Ltd. All Rights Reserved.
-        </p>
-      </div>
-    </footer>
+      </section>
 
-    <!-- Script -->
+      <!-- Our Verticals -->
+      <section id="verticals" class="py-20 px-6 bg-white">
+        <div class="max-w-6xl mx-auto text-center">
+          <h2 class="text-4xl font-bold text-green-600 mb-12">Our Offerings</h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Card 1 -->
+            <div
+              id="community"
+              class="flex flex-col justify-between rounded-2xl bg-white border-2 border-black shadow-sm hover:shadow-xl p-8 transition h-full"
+            >
+              <div>
+                <h3 class="text-2xl font-semibold text-green-600 mb-3">
+                  Navira Community Ecosystem
+                </h3>
+                <p class="text-gray-700 text-justify leading-relaxed mb-4">
+                  Connecting Hearts. Building Support. Sharing Growth. A vibrant
+                  community of students, parents, and senior citizens who grow
+                  together through mentorship, dialogue, and engagement.
+                </p>
+                <ul class="text-gray-700 text-left list-disc list-inside mb-6 space-y-1">
+                  <li>Mentorship & Guidance for Students</li>
+                  <li>Parent Circles & Family Support</li>
+                  <li>Senior Citizen Engagement Programs</li>
+                  <li>Social Impact & Volunteering Drives</li>
+                </ul>
+              </div>
+              <a href="#" class="inline-block bg-purple-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition mt-auto">
+                Join the Navira Community
+              </a>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              id="events"
+              class="flex flex-col justify-between rounded-2xl bg-white border-2 border-black shadow-sm hover:shadow-xl p-8 transition h-full"
+            >
+              <div>
+                <h3 class="text-2xl font-semibold text-green-600 mb-3">
+                  Navira Events – Learn | Grow | Celebrate
+                </h3>
+                <p class="text-gray-700 text-justify leading-relaxed mb-4">
+                  Creating Experiences that Transform Lives. Navira Events curates
+                  wellness retreats, leadership sessions, and family learning
+                  programs that inspire growth and connection.
+                </p>
+                <ul class="text-gray-700 text-left list-disc list-inside mb-6 space-y-1">
+                  <li>Personal Development & Life Skills</li>
+                  <li>Family & Youth Growth Events</li>
+                  <li>Corporate Wellness Programs</li>
+                  <li>Community Celebrations</li>
+                </ul>
+              </div>
+              <a href="#" class="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-purple-800 transition mt-auto">
+                Explore Upcoming Events
+              </a>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              id="meals"
+              class="flex flex-col justify-between rounded-2xl bg-white border-2 border-black shadow-sm hover:shadow-xl p-8 transition h-full"
+            >
+              <div>
+                <h3 class="text-2xl font-semibold text-green-600 mb-3">
+                  Navira Meals – Nourish Your Life
+                </h3>
+                <p class="text-gray-700 text-justify leading-relaxed mb-4">
+                  Wholesome Nutrition for a Healthier Tomorrow. Navira Meals
+                  delivers balanced, home-cooked goodness designed to energize
+                  your body and mind.
+                </p>
+                <ul class="text-gray-700 text-left list-disc list-inside mb-6 space-y-1">
+                  <li>Personalized Healthy Meal Plans</li>
+                  <li>Senior-Friendly & Family Nutrition</li>
+                  <li>Student Meals & Brain Food</li>
+                  <li>Corporate Meal Solutions</li>
+                </ul>
+              </div>
+              <a href="#" class="inline-block bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-green-800 transition mt-auto">
+                Order Your Meal Plan
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-16 bg-green-700 text-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-start">
+          <!-- Left Side -->
+          <div>
+            <h3 class="text-lg text-white font-semibold mb-4">Reach out to us or learn more about our services</h3>
+            <div class="mb-6">
+              <p class="font-bold">Corporate Office:</p>
+              <p>Innov8, Times Square, A Wing, 3rd Floor, Marol, Andheri Kurla Road,<br />Andheri East, Mumbai 400059</p>
+            </div>
+            <div class="flex items-center gap-3 mb-4">
+              <img src="phone10.png" alt="Phone" class="w-5 h-5" />
+              <span class="text-white">+91 9022 362 259</span>
+            </div>
+            <div class="flex items-center gap-3 mb-4">
+              <img src="finalm.png" alt="Email" class="w-5 h-5" />
+              <span class="text-white">naviraventures@gmail.com</span>
+            </div>
+          </div>
+
+          <!-- Right Side: Contact Form -->
+          <div x-data="contactForm()" x-init="initialize">
+            <h3 class="text-white font-semibold text-lg mb-4">Ready to Take Your Business to the Next Level?</h3>
+            <form @submit.prevent="submitForm" class="space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="text" x-model="firstName" required placeholder="First name" class="w-full p-2 bg-transparent border border-white rounded text-white placeholder-white" />
+                <input type="text" x-model="lastName" required placeholder="Last name" class="w-full p-2 bg-transparent border border-white rounded text-white placeholder-white" />
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input type="email" x-model="email" required placeholder="Email" class="w-full p-2 bg-transparent border border-white rounded text-white placeholder-white" />
+                <input id="whatsapp" type="tel" required placeholder="WhatsApp Number" class="w-full p-2 bg-transparent border border-white rounded text-white placeholder-white" />
+              </div>
+              <textarea x-model="message" required rows="4" placeholder="Message" class="w-full p-2 bg-transparent border border-white rounded text-white placeholder-white"></textarea>
+              <button type="submit" class="border border-white text-white px-6 py-2 rounded-full hover:bg-yellow-400 hover:text-[#392E7F] transition duration-300">Submit</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-[#392E7F] text-gray-300 py-4 px-6">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
+    <div>
+      Copyright – 2025 | Navira Life Essentials Pvt. Ltd.
+    </div>
+    <div class="flex space-x-6 mt-2 sm:mt-0">
+      <a href="privacy.html" class="hover:underline">Privacy Policy</a>
+      <a href="cookie.html" class="hover:underline">Cookie Policy</a>
+      <a href="terms.html" class="hover:underline">Terms & Conditions</a>
+    </div>
+  </div>
+</footer>
+
+    <!-- Utility Scripts -->
     <script>
+      // set copy of year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Core interactive JS -->
+    <script>
+      // Mobile menu toggle with accessibility
       const menuToggle = document.getElementById("menu-toggle");
       const mobileMenu = document.getElementById("mobile-menu");
+      const navLinks = document.querySelectorAll(".nav-link");
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+
+      function setMenuOpen(open) {
+        if (open) {
+          mobileMenu.classList.remove("hidden");
+          menuToggle.setAttribute("aria-expanded", "true");
+        } else {
+          mobileMenu.classList.add("hidden");
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
+      }
 
       menuToggle.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        setMenuOpen(!expanded);
       });
 
-      // Active nav animation on click
-      const navLinks = document.querySelectorAll(".nav-link");
+      // Close mobile menu when a mobile link is clicked
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => setMenuOpen(false));
+      });
+
+      // Active nav animation on click for desktop links
       navLinks.forEach((link) => {
         link.addEventListener("click", () => {
           navLinks.forEach((l) => l.classList.remove("active"));
           link.classList.add("active");
         });
       });
+
+      // Close mobile menu when clicking outside (optional)
+      document.addEventListener("click", (e) => {
+        const target = e.target;
+        if (!mobileMenu.contains(target) && !menuToggle.contains(target) && window.getComputedStyle(menuToggle).display !== "none") {
+          setMenuOpen(false);
+        }
+      });
+
+      // Ensure header size variable matches actual height on resize (keeps scroll-padding accurate)
+      function syncHeaderHeight() {
+        const header = document.getElementById("navbar");
+        const h = header.getBoundingClientRect().height;
+        document.documentElement.style.setProperty('--header-height', Math.round(h) + 'px');
+      }
+      window.addEventListener('resize', syncHeaderHeight);
+      window.addEventListener('load', syncHeaderHeight);
+    </script>
+
+    <!-- AlpineJS & intl-tel-input -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+
+    <!-- Contact form logic (keeps your original behaviour) -->
+    <script>
+      function contactForm() {
+        return {
+          firstName: '',
+          lastName: '',
+          email: '',
+          whatsapp: '',
+          message: '',
+          iti: null,
+
+          initialize() {
+            const input = document.querySelector("#whatsapp");
+
+            // Use default country to avoid geoIP CORS issues while testing locally.
+            // You can change initialCountry: "auto" and keep geoIpLookup if hosted
+            this.iti = window.intlTelInput(input, {
+              initialCountry: "auto",
+              geoIpLookup: function (callback) {
+                // IMPORTANT: ipapi.co sometimes blocks CORS when served from file://.
+                // If you host your site on https:// or want to avoid CORS, set initialCountry to "IN".
+                fetch("https://ipapi.co/json")
+                  .then(res => res.json())
+                  .then(data => callback(data.country_code))
+                  .catch(() => callback("IN"));
+              },
+              utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+            });
+          },
+
+          submitForm() {
+            const fullNumber = this.iti.getNumber();
+
+            if (!this.iti.isValidNumber()) {
+              alert("Please enter a valid WhatsApp number including country code.");
+              return;
+            }
+
+            const data = {
+              firstName: this.firstName,
+              lastName: this.lastName,
+              email: this.email,
+              whatsapp: fullNumber,
+              message: this.message
+            };
+
+            // NOTE: If testing from a local file (file://), browsers block CORS preflight.
+            // Host the site or use mode: 'no-cors' for local testing (no response available).
+            fetch("https://script.google.com/macros/s/AKfycbw-wlPFpDxm9C6kH0hoBj_l0NTJzB9hcoGBAAtEjBYGtb9eat7tw4BRZnLPHsaVPKJB/exec", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+            })
+            .then(res => res.json())
+            .then(response => {
+              if (response.result === "success") {
+                alert("Thank you! Your message has been sent.");
+                // Clear fields
+                this.firstName = '';
+                this.lastName = '';
+                this.email = '';
+                this.whatsapp = '';
+                this.message = '';
+                this.iti.setNumber('');
+                // close mobile menu if open
+                const menuToggle = document.getElementById('menu-toggle');
+                if (menuToggle && menuToggle.getAttribute('aria-expanded') === 'true') {
+                  document.getElementById('mobile-menu').classList.add('hidden');
+                  menuToggle.setAttribute('aria-expanded', 'false');
+                }
+              } else {
+                alert("Something went wrong. Please try again.");
+              }
+            })
+            .catch(err => {
+              console.error(err);
+              alert("Error sending form. Please try again later.");
+            });
+          }
+        }
+      }
     </script>
   </body>
 </html>
