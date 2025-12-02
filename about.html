@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Navira Life Essentials</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navira: { 50: '#f2fbf5', 100: '#e0f6e8', 200: '#c2ebd3', 300: '#96daba', 400: '#62c19b', 500: '#3ba481', 600: '#2c8366', 700: '#266954', 800: '#235344', 900: '#1f453a' },
+              stone: { 50: '#fafaf9', 100: '#f5f5f4', 800: '#292524', 900: '#1c1917' }
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              serif: ['Merriweather', 'Georgia', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      h1, h2, h3, h4, h5, h6 { font-family: 'Merriweather', serif; }
+      [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800 antialiased selection:bg-navira-200 selection:text-navira-900 flex flex-col min-h-screen">
+    
+    <!-- Standard Navbar for Inner Pages -->
+    <nav x-data="{ mobileMenuOpen: false }" 
+         class="fixed top-0 left-0 w-full z-50 bg-white shadow-md py-3">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+          <a href="index.html" class="flex items-center space-x-3 group">
+            <div class="relative w-12 h-12 flex items-center justify-center bg-navira-50 rounded-full shadow-sm group-hover:bg-navira-100 transition-colors text-navira-600">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8">
+                 <circle cx="12" cy="12" r="10" class="opacity-20" fill="currentColor" stroke="none"/>
+                 <path d="M12 22c0-4.5 1.5-7 4-9" />
+                 <path d="M12 22c0-4.5-1.5-7-4-9" />
+                 <path d="M12 22v-9" />
+                 <path d="M12 13a4 4 0 0 0-4-4" />
+                 <path d="M12 13a4 4 0 0 1 4-4" />
+                 <path d="M12 9a3 3 0 0 0-3-3" />
+                 <path d="M12 9a3 3 0 0 1 3-3" />
+               </svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-navira-900 text-xl font-bold font-serif tracking-wide">NAVIRA</span>
+              <span class="text-navira-600 text-[10px] uppercase tracking-[0.2em] font-sans font-medium">Life Essentials</span>
+            </div>
+          </a>
+          <div class="hidden md:flex space-x-8 items-center">
+            <a href="index.html" class="text-stone-600 hover:text-navira-600 text-sm font-medium transition-colors">Home</a>
+            <a href="about.html" class="text-navira-700 border-b-2 border-navira-500 text-sm font-medium transition-colors">About</a>
+            <a href="community.html" class="text-stone-600 hover:text-navira-600 text-sm font-medium transition-colors">Community</a>
+            <a href="events.html" class="text-stone-600 hover:text-navira-600 text-sm font-medium transition-colors">Events</a>
+            <a href="meals.html" class="text-stone-600 hover:text-navira-600 text-sm font-medium transition-colors">Meals</a>
+            <a href="insights.html" class="text-stone-600 hover:text-navira-600 text-sm font-medium transition-colors">Insights</a>
+            <a href="join.html" class="bg-navira-600 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-navira-700 transition-all shadow-md">Join Now</a>
+          </div>
+          <div class="md:hidden flex items-center">
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-stone-800 focus:outline-none p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div x-show="mobileMenuOpen" class="absolute top-full left-0 w-full bg-white shadow-xl border-t border-stone-100 md:hidden py-4 px-4 flex flex-col space-y-3" x-cloak>
+        <a href="index.html" class="block px-4 py-2 rounded-lg text-stone-600 hover:bg-stone-50">Home</a>
+        <a href="about.html" class="block px-4 py-2 rounded-lg bg-navira-50 text-navira-800 font-medium">About</a>
+        <a href="community.html" class="block px-4 py-2 rounded-lg text-stone-600 hover:bg-stone-50">Community</a>
+        <a href="events.html" class="block px-4 py-2 rounded-lg text-stone-600 hover:bg-stone-50">Events</a>
+        <a href="meals.html" class="block px-4 py-2 rounded-lg text-stone-600 hover:bg-stone-50">Meals</a>
+        <a href="insights.html" class="block px-4 py-2 rounded-lg text-stone-600 hover:bg-stone-50">Insights</a>
+        <a href="contact.html" class="block px-4 py-2 rounded-lg text-stone-600 hover:bg-stone-50">Contact</a>
+        <a href="join.html" class="block w-full text-center bg-navira-600 text-white px-4 py-3 rounded-lg font-medium mt-4">Join Now</a>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="pt-28 pb-20 bg-navira-50 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-serif text-navira-900 mb-6 leading-tight">Our Story, Purpose & Vision</h1>
+          <p class="text-xl text-stone-600 leading-relaxed max-w-2xl mx-auto">
+            Rooted in India’s timeless wisdom, inspired by modern well-being.
+          </p>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex-grow">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+          <div class="relative">
+            <div class="absolute top-4 -left-4 w-full h-full border-2 border-navira-200 rounded-2xl z-0"></div>
+            <img src="https://images.unsplash.com/photo-1523908511403-7fc7b25592f4?q=80&w=1920&auto=format&fit=crop" alt="Mindful Living" class="relative z-10 rounded-2xl shadow-2xl w-full object-cover h-[500px]">
+          </div>
+          <div>
+            <h2 class="text-3xl font-serif text-stone-800 mb-6">The Navira Essence</h2>
+            <p class="text-stone-600 mb-6 text-lg leading-relaxed">
+              Navira Life Essentials was founded with a simple yet powerful belief: true well-being is a balance between nourishment, knowledge, and connection.
+            </p>
+            <p class="text-stone-600 mb-6 text-lg leading-relaxed">
+              In a world of speed and stress, Navira brings you back to the essentials — healthy meals, mindful experiences, and a supportive ecosystem of like-minded individuals.
+            </p>
+            <div class="bg-white p-8 rounded-xl border-l-4 border-navira-500 shadow-sm">
+              <p class="italic text-stone-700 font-medium text-lg">"We believe wellness is not a luxury — it’s a lifestyle."</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+          <div class="bg-navira-800 text-white p-12 rounded-3xl shadow-xl hover:transform hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-2xl font-serif mb-4 flex items-center gap-2">
+                <span class="bg-white/20 p-2 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg></span>
+                Our Mission
+            </h3>
+            <p class="text-navira-100 leading-relaxed text-lg">
+              To empower individuals and families to live healthier, more conscious, and purpose-driven lives through healthy food, balance, connection and community experiences that nurture the whole self.
+            </p>
+          </div>
+          <div class="bg-amber-50 text-stone-800 p-12 rounded-3xl shadow-sm border border-amber-100 hover:transform hover:-translate-y-1 transition-all duration-300">
+            <h3 class="text-2xl font-serif mb-4 flex items-center gap-2 text-amber-900">
+                <span class="bg-amber-200 p-2 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg></span>
+                Our Vision
+            </h3>
+            <p class="text-stone-700 leading-relaxed text-lg">
+              To become India’s most trusted holistic living brand, inspiring millions to embrace natural wellness, mindful learning, and collective growth.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center">
+           <h2 class="text-3xl font-serif text-stone-800 mb-16">Our Core Values</h2>
+           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+               <!-- Value 1 -->
+               <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all border border-stone-100">
+                  <div class="w-14 h-14 bg-navira-50 rounded-full flex items-center justify-center mx-auto mb-6 text-navira-600 font-bold text-xl">1</div>
+                  <h4 class="text-xl font-serif text-stone-800 mb-3">Authenticity</h4>
+                  <p class="text-stone-500 text-sm">Real ingredients, real connections, real growth.</p>
+               </div>
+               <!-- Value 2 -->
+               <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all border border-stone-100">
+                  <div class="w-14 h-14 bg-navira-50 rounded-full flex items-center justify-center mx-auto mb-6 text-navira-600 font-bold text-xl">2</div>
+                  <h4 class="text-xl font-serif text-stone-800 mb-3">Integrity</h4>
+                  <p class="text-stone-500 text-sm">Doing good the right way, sustainably and ethically.</p>
+               </div>
+               <!-- Value 3 -->
+               <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all border border-stone-100">
+                  <div class="w-14 h-14 bg-navira-50 rounded-full flex items-center justify-center mx-auto mb-6 text-navira-600 font-bold text-xl">3</div>
+                  <h4 class="text-xl font-serif text-stone-800 mb-3">Empowerment</h4>
+                  <p class="text-stone-500 text-sm">Helping every individual take charge of their wellness.</p>
+               </div>
+               <!-- Value 4 -->
+               <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all border border-stone-100">
+                  <div class="w-14 h-14 bg-navira-50 rounded-full flex items-center justify-center mx-auto mb-6 text-navira-600 font-bold text-xl">4</div>
+                  <h4 class="text-xl font-serif text-stone-800 mb-3">Community</h4>
+                  <p class="text-stone-500 text-sm">Growing together, supporting and celebrating each other.</p>
+               </div>
+           </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-300 pt-16 pb-8 border-t border-stone-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+             <div>
+                 <a href="index.html" class="flex items-center space-x-2 mb-4">
+                   <span class="text-2xl font-serif font-bold text-white">NAVIRA</span>
+                 </a>
+                 <p class="text-sm text-stone-400">Nourishing Mind. Body. Soul.</p>
+             </div>
+             <div>
+                 <h4 class="text-white font-bold mb-4">Discover</h4>
+                 <ul class="space-y-2 text-sm">
+                     <li><a href="about.html" class="hover:text-navira-400">About Us</a></li>
+                     <li><a href="community.html" class="hover:text-navira-400">Community</a></li>
+                     <li><a href="events.html" class="hover:text-navira-400">Events</a></li>
+                 </ul>
+             </div>
+             <div>
+                 <h4 class="text-white font-bold mb-4">Wellness</h4>
+                 <ul class="space-y-2 text-sm">
+                     <li><a href="meals.html" class="hover:text-navira-400">Sabroti Meals</a></li>
+                     <li><a href="insights.html" class="hover:text-navira-400">Insights Blog</a></li>
+                     <li><a href="join.html" class="hover:text-navira-400">Membership</a></li>
+                 </ul>
+             </div>
+             <div>
+                 <h4 class="text-white font-bold mb-4">Contact</h4>
+                 <ul class="space-y-2 text-sm">
+                     <li>Mumbai, India</li>
+                     <li><a href="mailto:hello@naviralife.com" class="hover:text-navira-400">hello@naviralife.com</a></li>
+                 </ul>
+             </div>
+         </div>
+         <div class="text-center text-xs text-stone-500 border-t border-stone-800 pt-8">&copy; 2024 Navira Life Essentials Pvt. Ltd. All rights reserved.</div>
+      </div>
+    </footer>
+</body>
+</html>

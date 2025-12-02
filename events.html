@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Events | Navira Life Essentials</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    <script>tailwind.config={theme:{extend:{colors:{navira:{50:'#f2fbf5',100:'#e0f6e8',200:'#c2ebd3',300:'#96daba',400:'#62c19b',500:'#3ba481',600:'#2c8366',700:'#266954',800:'#235344',900:'#1f453a'},stone:{50:'#fafaf9',100:'#f5f5f4',800:'#292524',900:'#1c1917'}},fontFamily:{sans:['Inter','system-ui','sans-serif'],serif:['Merriweather','Georgia','serif']}}}}</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>body{font-family:'Inter',sans-serif}h1,h2,h3,h4{font-family:'Merriweather',serif}[x-cloak]{display:none!important}</style>
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans flex flex-col min-h-screen">
+    <nav x-data="{ mobileMenuOpen: false }" class="fixed top-0 left-0 w-full z-50 bg-white shadow-md py-3">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-3 group">
+          <div class="relative w-12 h-12 flex items-center justify-center bg-navira-50 rounded-full shadow-sm group-hover:bg-navira-100 transition-colors text-navira-600">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8">
+                 <circle cx="12" cy="12" r="10" class="opacity-20" fill="currentColor" stroke="none"/>
+                 <path d="M12 22c0-4.5 1.5-7 4-9" />
+                 <path d="M12 22c0-4.5-1.5-7-4-9" />
+                 <path d="M12 22v-9" />
+                 <path d="M12 13a4 4 0 0 0-4-4" />
+                 <path d="M12 13a4 4 0 0 1 4-4" />
+                 <path d="M12 9a3 3 0 0 0-3-3" />
+                 <path d="M12 9a3 3 0 0 1 3-3" />
+               </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-navira-900 text-xl font-bold font-serif tracking-wide">NAVIRA</span>
+            <span class="text-navira-600 text-[10px] uppercase tracking-[0.2em] font-sans font-medium">Life Essentials</span>
+          </div>
+        </a>
+        <div class="hidden md:flex space-x-8 items-center">
+          <a href="index.html" class="text-stone-600 hover:text-navira-600 text-sm font-medium">Home</a>
+          <a href="about.html" class="text-stone-600 hover:text-navira-600 text-sm font-medium">About</a>
+          <a href="community.html" class="text-stone-600 hover:text-navira-600 text-sm font-medium">Community</a>
+          <a href="events.html" class="text-navira-700 border-b-2 border-navira-500 text-sm font-medium">Events</a>
+          <a href="meals.html" class="text-stone-600 hover:text-navira-600 text-sm font-medium">Meals</a>
+          <a href="insights.html" class="text-stone-600 hover:text-navira-600 text-sm font-medium">Insights</a>
+          <a href="join.html" class="bg-navira-600 text-white px-6 py-2 rounded-full text-sm font-medium">Join Now</a>
+        </div>
+        <div class="md:hidden flex items-center">
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-stone-800 focus:outline-none p-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+            </button>
+        </div>
+      </div>
+      <div x-show="mobileMenuOpen" class="absolute top-full left-0 w-full bg-white shadow-xl border-t border-stone-100 md:hidden py-4 px-4 flex flex-col space-y-3" x-cloak>
+        <a href="index.html" class="block px-4 py-2 rounded-lg text-stone-600 hover:bg-stone-50">Home</a>
+        <a href="about.html" class="block px-4 py-2 rounded-lg text-stone-600 hover:bg-stone-50">About</a>
+        <a href="community.html" class="block px-4 py-2 rounded-lg text-stone-600 hover:bg-stone-50">Community</a>
+        <a href="events.html" class="block px-4 py-2 rounded-lg bg-navira-50 text-navira-800 font-medium">Events</a>
+        <a href="meals.html" class="block px-4 py-2 rounded-lg text-stone-600 hover:bg-stone-50">Meals</a>
+        <a href="insights.html" class="block px-4 py-2 rounded-lg text-stone-600 hover:bg-stone-50">Insights</a>
+        <a href="contact.html" class="block px-4 py-2 rounded-lg text-stone-600 hover:bg-stone-50">Contact</a>
+        <a href="join.html" class="block w-full text-center bg-navira-600 text-white px-4 py-3 rounded-lg font-medium mt-4">Join Now</a>
+      </div>
+    </nav>
+
+    <div class="pt-24 flex-grow">
+      <div class="bg-amber-50 py-20 px-4 text-center">
+        <h1 class="text-4xl md:text-6xl font-serif text-amber-950 mb-6">Experiences That Inspire Transformation</h1>
+        <p class="text-xl text-amber-900 max-w-3xl mx-auto">Mindfulness retreats, growth workshops, and learning festivals.</p>
+      </div>
+      <div class="max-w-7xl mx-auto px-4 py-16">
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Event 1 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-stone-100 flex flex-col">
+               <div class="h-48 bg-stone-200 relative">
+                  <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover">
+                  <div class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold">RETREAT</div>
+               </div>
+               <div class="p-6 flex-grow">
+                  <div class="text-sm text-stone-500 mb-2">Oct 15 • Mumbai</div>
+                  <h3 class="text-xl font-serif text-stone-800 mb-3">Morning Mindfulness Retreat</h3>
+                  <p class="text-stone-600 text-sm mb-4">Start your day with guided meditation and nature walks.</p>
+                  <button class="w-full bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 rounded-lg text-sm font-medium mt-auto">Register</button>
+               </div>
+            </div>
+            <!-- Event 2 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-stone-100 flex flex-col">
+               <div class="h-48 bg-stone-200 relative">
+                  <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover">
+                  <div class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold">WORKSHOP</div>
+               </div>
+               <div class="p-6 flex-grow">
+                  <div class="text-sm text-stone-500 mb-2">Oct 22 • Online</div>
+                  <h3 class="text-xl font-serif text-stone-800 mb-3">Holistic Nutrition Workshop</h3>
+                  <p class="text-stone-600 text-sm mb-4">Learn the basics of plant-based cooking and mindful eating.</p>
+                  <button class="w-full bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 rounded-lg text-sm font-medium mt-auto">Register</button>
+               </div>
+            </div>
+            <!-- Event 3 -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-stone-100 flex flex-col">
+               <div class="h-48 bg-stone-200 relative">
+                  <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover">
+                  <div class="absolute top-4 right-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold">FESTIVAL</div>
+               </div>
+               <div class="p-6 flex-grow">
+                  <div class="text-sm text-stone-500 mb-2">Nov 05 • Mumbai</div>
+                  <h3 class="text-xl font-serif text-stone-800 mb-3">Conscious Living Festival</h3>
+                  <p class="text-stone-600 text-sm mb-4">A day of music, art, and wellness talks for the whole family.</p>
+                  <button class="w-full bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 rounded-lg text-sm font-medium mt-auto">Register</button>
+               </div>
+            </div>
+         </div>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-300 pt-16 pb-8 border-t border-stone-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-stone-500">
+         &copy; 2024 Navira Life Essentials Pvt. Ltd.
+      </div>
+    </footer>
+</body>
+</html>

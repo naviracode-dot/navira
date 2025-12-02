@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms & Conditions | Navira Life Essentials Pvt. Ltd.</title>
+    <meta name="theme-color" content="#047857" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --header-height: 75px;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: var(--header-height);
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1, h2, h3 {
+        font-family: "Playfair Display", serif;
+      }
+      [x-cloak] { display: none !important; }
+    </style>
+  </head>
+
+  <body class="bg-white text-gray-800 antialiased">
+    <!-- Navbar -->
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-green-700 border-b border-green-800 shadow-sm transition-all duration-300"
+      style="height: var(--header-height);"
+      x-data="{ open: false }"
+    >
+      <div class="max-w-7xl mx-auto flex items-center justify-between h-full px-6 lg:px-12">
+        <a href="index.html" class="flex items-center space-x-2" aria-label="Navira Home">
+          <img
+            src="Navira1.png"
+            alt="Navira Logo"
+            class="h-12 md:h-[56px] w-auto object-contain transition-all duration-300"
+          />
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex items-center space-x-6 font-semibold text-[115%]">
+          <a href="index.html#about" class="text-white relative nav-link">About</a>
+          <a href="index.html#vision" class="text-white relative nav-link">Vision</a>
+          <a href="index.html#verticals" class="text-white relative nav-link">Our Offerings</a>
+          <a href="index.html#contact" class="text-white relative nav-link">Connect Now</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button @click="open = !open" class="md:hidden text-white text-3xl focus:outline-none font-bold">
+          <template x-if="!open"><span>☰</span></template>
+          <template x-if="open"><span>&times;</span></template>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        x-show="open"
+        x-cloak
+        x-transition
+        class="flex flex-col space-y-2 bg-green-700 border-t border-green-800 py-4 px-6 md:hidden font-semibold text-lg text-center"
+      >
+        <a href="index.html#about" class="block py-2 text-white">About</a>
+        <a href="index.html#vision" class="block py-2 text-white">Vision</a>
+        <a href="index.html#verticals" class="block py-2 text-white">Our Offerings</a>
+        <a href="index.html#contact" class="block py-2 text-white">Connect Now</a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-[var(--header-height)]">
+      <section class="py-20 px-6 bg-white">
+        <div class="max-w-5xl mx-auto text-center">
+          <img
+            src="navira2.png"
+            alt="Navira Logo"
+            class="w-[160px] md:w-[180px] h-auto mb-8 mx-auto object-contain"
+          />
+          <h1 class="text-4xl md:text-5xl font-bold text-green-700 mb-6">
+            Terms & Conditions
+          </h1>
+          <p class="text-gray-700 text-lg leading-relaxed text-justify">
+            These Terms and Conditions govern your use of the website operated by
+            <strong>Navira Life Essentials Pvt. Ltd.</strong> By accessing or using our website,
+            you agree to comply with and be bound by these terms.
+          </p>
+        </div>
+
+        <!-- Terms Content -->
+        <div class="max-w-5xl mx-auto mt-10 text-gray-700 leading-relaxed space-y-6 text-justify">
+          <h2 class="text-2xl font-bold text-green-700">1. Acceptance of Terms</h2>
+          <p>
+            By using <strong>www.naviralife.com</strong> (“Site”), you acknowledge that you have read,
+            understood, and agree to these Terms & Conditions. If you do not agree, please refrain from using our website.
+          </p>
+
+          <h2 class="text-2xl font-bold text-green-700">2. Intellectual Property</h2>
+          <p>
+            All content on this Site, including text, graphics, logos, images, and software, is owned or licensed by
+            <strong>Navira Life Essentials Pvt. Ltd.</strong> and is protected by applicable copyright and trademark laws.
+            You may view, download, and print materials for personal use only and may not modify or redistribute content without permission.
+          </p>
+
+          <h2 class="text-2xl font-bold text-green-700">3. Disclaimer and Limitation of Liability</h2>
+          <p>
+            This website and its content are provided “as is,” without any warranties of any kind.
+            <strong>Navira Life Essentials Pvt. Ltd.</strong> is not liable for any loss, damage, or disruption caused
+            by your use of this Site or reliance on its information.
+          </p>
+
+          <h2 class="text-2xl font-bold text-green-700">4. External Links</h2>
+          <p>
+            Our website may contain links to third-party websites for your convenience. These links do not signify endorsement,
+            and Navira is not responsible for their content or privacy practices.
+          </p>
+
+          <h2 class="text-2xl font-bold text-green-700">5. Privacy and Data Usage</h2>
+          <p>
+            By using this Site, you agree to the collection and use of information in accordance with our
+            <a href="privacy.html" class="text-blue-600 underline hover:text-blue-800">Privacy Policy</a>.
+            We take all reasonable precautions to protect user data but cannot guarantee absolute security.
+          </p>
+
+          <h2 class="text-2xl font-bold text-green-700">6. Indemnification</h2>
+          <p>
+            You agree to indemnify and hold harmless <strong>Navira Life Essentials Pvt. Ltd.</strong>,
+            its employees, and partners from any claims, damages, or liabilities arising from your use of this Site.
+          </p>
+
+          <h2 class="text-2xl font-bold text-green-700">7. Modifications to Terms</h2>
+          <p>
+            Navira reserves the right to modify or update these Terms & Conditions at any time without prior notice.
+            Continued use of the Site after changes constitutes acceptance of the new terms.
+          </p>
+
+          <h2 class="text-2xl font-bold text-green-700">8. Contact Information</h2>
+          <p>
+            For any queries or concerns regarding these Terms, please contact us at
+            <a href="mailto:info@naviralife.com" class="text-blue-600 underline hover:text-blue-800">
+              info@naviralife.com
+            </a>.
+          </p>
+
+          <p><strong>Last Updated:</strong> November 2025</p>
+        </div>
+
+        <!-- Back Button -->
+        <div class="text-center mt-12">
+          <a
+            href="index.html"
+            class="inline-block bg-green-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-800 transition"
+          >
+            ← Back to Home
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-700 text-gray-300 py-4 px-6">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
+        <div>
+          Copyright – 2025 | Navira Life Essentials Pvt. Ltd.
+        </div>
+        <div class="flex space-x-6 mt-2 sm:mt-0">
+          <a href="privacy.html" class="hover:underline">Privacy Policy</a>
+          <a href="cookie.html" class="hover:underline">Cookie Policy</a>
+          <a href="terms.html" class="hover:underline">Terms & Conditions</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Join | Navira Life Essentials</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    <script>tailwind.config={theme:{extend:{colors:{navira:{50:'#f2fbf5',100:'#e0f6e8',200:'#c2ebd3',300:'#96daba',400:'#62c19b',500:'#3ba481',600:'#2c8366',700:'#266954',800:'#235344',900:'#1f453a'},stone:{50:'#fafaf9',100:'#f5f5f4',800:'#292524',900:'#1c1917'}},fontFamily:{sans:['Inter','system-ui','sans-serif'],serif:['Merriweather','Georgia','serif']}}}}</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>body{font-family:'Inter',sans-serif}h1,h2,h3,h4{font-family:'Merriweather',serif}[x-cloak]{display:none!important}</style>
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans min-h-screen flex flex-col">
+    <nav class="bg-white shadow-md py-3">
+       <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-3 group text-stone-800">
+          <div class="relative w-12 h-12 flex items-center justify-center bg-navira-50 rounded-full shadow-sm group-hover:bg-navira-100 transition-colors text-navira-600">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8">
+                 <circle cx="12" cy="12" r="10" class="opacity-20" fill="currentColor" stroke="none"/>
+                 <path d="M12 22c0-4.5 1.5-7 4-9" />
+                 <path d="M12 22c0-4.5-1.5-7-4-9" />
+                 <path d="M12 22v-9" />
+                 <path d="M12 13a4 4 0 0 0-4-4" />
+                 <path d="M12 13a4 4 0 0 1 4-4" />
+                 <path d="M12 9a3 3 0 0 0-3-3" />
+                 <path d="M12 9a3 3 0 0 1 3-3" />
+               </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-navira-900 text-xl font-bold font-serif tracking-wide">NAVIRA</span>
+            <span class="text-navira-600 text-[10px] uppercase tracking-[0.2em] font-sans font-medium">Life Essentials</span>
+          </div>
+        </a>
+        <a href="index.html" class="text-sm text-stone-500 hover:text-navira-600">Back to Home</a>
+       </div>
+    </nav>
+
+    <div class="flex-grow flex items-center justify-center px-4 py-12">
+      <div class="max-w-md w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div class="bg-navira-700 p-8 text-center">
+           <h1 class="text-3xl font-serif text-white mb-2">Join the Movement</h1>
+           <p class="text-navira-200 text-sm">Unlock exclusive events and meal discounts.</p>
+        </div>
+        <div class="p-8">
+           <form class="space-y-4">
+              <input type="text" class="w-full border border-stone-300 p-3 rounded-lg focus:ring-2 focus:ring-navira-500 focus:border-transparent outline-none" placeholder="Full Name">
+              <input type="email" class="w-full border border-stone-300 p-3 rounded-lg focus:ring-2 focus:ring-navira-500 focus:border-transparent outline-none" placeholder="Email">
+              <button class="w-full bg-navira-600 hover:bg-navira-700 text-white font-bold py-3 rounded-lg transition-colors">Create Account</button>
+           </form>
+           <p class="text-center text-xs text-stone-400 mt-6">By joining, you agree to our Terms of Use.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-stone-900 text-stone-300 py-6 border-t border-stone-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-stone-500">
+         &copy; 2024 Navira Life Essentials Pvt. Ltd.
+      </div>
+    </footer>
+</body>
+</html>
