@@ -1,203 +1,204 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth overflow-x-hidden">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navira Life Essentials | Live Well. Eat Mindfully. Grow Consciously.</title>
-    
-    <!-- Fonts: Poppins (Modern, Clean) & Lora (Elegance) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Custom Theme Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navira: {
-                            teal: '#134E4A',      /* Deep Teal Green */
-                            tealLight: '#2DD4BF', /* Accent Teal */
-                            orange: '#C2410C',    /* Earthy Orange */
-                            orangeLight: '#FFEDD5', /* Light Earthy Cream/Orange */
-                            cream: '#FAFAF9',     /* Off-white background */
-                            sand: '#F5F5F4',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                        serif: ['Lora', 'serif'],
-                    },
-                    backgroundImage: {
-                        'leaf-pattern': "url('data:image/svg+xml,%3Csvg width=\\'20\\' height=\\'20\\' viewBox=\\'0 0 20 20\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cpath d=\\'M1 1h2v2H1V1zm4 4h2v2H5V5zm4 4h2v2H9V9zm4 4h2v2h-2v-2zm4 4h2v2h-2v-2z\\' fill=\\'%23134E4A\\' fill-opacity=\\'0.05\\' fill-rule=\\'evenodd\\'/%3E%3C/svg%3E')",
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navira Life Essentials | Live Well. Eat Mindfully. Grow Consciously.</title>
+  <meta name="description" content="Navira Life Essentials — holistic wellness, mindful living, healthy meals, and a conscious community. Join our events, meal plans and community programs to nourish mind, body and soul." />
+  <meta name="theme-color" content="#134E4A" />
+  <link rel="canonical" href="https://www.naviralife.com/" />
+  <!-- Open Graph / Twitter (quick defaults, change values & images) -->
+  <meta property="og:site_name" content="Navira Life Essentials" />
+  <meta property="og:title" content="Navira Life Essentials | Live Well. Eat Mindfully. Grow Consciously." />
+  <meta property="og:description" content="Holistic wellness — mindful living, healthy meals, and a conscious community. Explore Navira Community, Events, and Navira Meals." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.naviralife.com/" />
+  <meta property="og:image" content="https://www.naviralife.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@naviralife" />
+  <meta name="twitter:title" content="Navira Life Essentials | Live Well. Eat Mindfully. Grow Consciously." />
+  <meta name="twitter:description" content="Holistic wellness — mindful living, healthy meals, and a conscious community." />
+  <meta name="twitter:image" content="https://www.naviralife.com/og-image.jpg" />
 
-    <style>
-        /* Custom Styles for specific animations and shapes */
-        .organic-shape {
-            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-        }
-        .organic-shape-2 {
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-        }
-        
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+  <!-- Fonts: Poppins (Modern, Clean) & Lora (Elegance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-        /* Carousel Transitions */
-        .carousel-slide {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            z-index: 0;
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Theme Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navira: {
+              teal: '#134E4A', /* Deep Teal Green */
+              tealLight: '#2DD4BF', /* Accent Teal */
+              orange: '#C2410C', /* Earthy Orange */
+              orangeLight: '#FFEDD5', /* Light Earthy Cream/Orange */
+              cream: '#FAFAF9', /* Off-white background */
+              sand: '#F5F5F4'
+            }
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+            serif: ['Lora', 'serif']
+          },
+          backgroundImage: {
+            'leaf-pattern':
+              "url('data:image/svg+xml,%3Csvg width=\\'20\\' height=\\'20\\' viewBox=\\'0 0 20 20\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cpath d=\\'M1 1h2v2H1V1zm4 4h2v2H5V5zm4 4h2v2H9V9zm4 4h2v2h-2v-2zm4 4h2v2h-2v-2z\\' fill=\\'%23134E4A\\' fill-opacity=\\'0.05\\' fill-rule=\\'evenodd\\'/%3E%3C/svg%3E')"
+          }
         }
-        .carousel-slide.active {
-            opacity: 1;
-            z-index: 1;
-        }
-        
-        /* Hide scrollbar for clean UI */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Styles for specific animations and shapes */
+    .organic-shape { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    .organic-shape-2 { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+    /* Carousel Transitions */
+    .carousel-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease-in-out; z-index: 0; }
+    .carousel-slide.active { opacity: 1; z-index: 1; }
+    /* Hide scrollbar for clean UI */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    /* NAV LOGO sizing rules */
+    #nav-logo { display:block; height:48px; width:auto; object-fit:contain; border-radius:6px; }
+    @media (min-width: 640px) { #nav-logo { height:56px; } }
+    @media (min-width: 1024px) { #nav-logo { height:72px; } }
+  </style>
+
+  <!-- JSON-LD Organization (basic) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Navira Life Essentials Pvt. Ltd.",
+      "url": "https://www.naviralife.com",
+      "logo": "https://www.naviralife.com/logo.png",
+      "sameAs": [
+        "https://www.instagram.com/naviralife",
+        "https://www.linkedin.com/company/naviralife",
+        "https://www.facebook.com/naviralife"
+      ],
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "telephone": "+91 9004 249 399",
+        "contactType": "customer service",
+        "areaServed": "IN"
+      }],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Innov8, A Wing, 3rd Floor, Times Square Building, Marol, Andheri East",
+        "addressLocality": "Mumbai",
+        "postalCode": "400059",
+        "addressCountry": "IN"
+      }
+    }
+  </script>
+
 </head>
 <body class="bg-navira-cream text-gray-800 font-sans antialiased overflow-x-hidden selection:bg-navira-orange selection:text-white">
 
-    <!-- NAVIGATION -->
-    <!-- Added 'group' class to allow child elements to change based on navbar state -->
-    <nav class="fixed w-full z-50 transition-all duration-500 bg-transparent group overflow-hidden" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20 transition-all duration-300 group-[.scrolled]:h-16">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2">
-                    <!-- Icon color: White initially, OrangeLight when scrolled -->
-                    <i data-lucide="leaf" class="h-6 w-6 text-white transition-colors duration-300 group-[.scrolled]:text-navira-orangeLight"></i>
-                    <!-- Text color: White initially, White when scrolled (for readability) -->
-                    <span class="font-serif font-bold text-xl tracking-wide text-white transition-colors duration-300 group-[.scrolled]:text-white">NAVIRA</span>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8 items-center">
-                    <!-- Links: White initially, Earthy Orange (orangeLight) when scrolled -->
-                    <a href="#home" class="text-sm font-medium uppercase tracking-wider transition-colors duration-300 text-white/90 hover:text-white group-[.scrolled]:text-navira-orangeLight group-[.scrolled]:hover:text-white">Home</a>
-                    <a href="#community" class="text-sm font-medium uppercase tracking-wider transition-colors duration-300 text-white/90 hover:text-white group-[.scrolled]:text-navira-orangeLight group-[.scrolled]:hover:text-white">Community</a>
-                    <a href="#events" class="text-sm font-medium uppercase tracking-wider transition-colors duration-300 text-white/90 hover:text-white group-[.scrolled]:text-navira-orangeLight group-[.scrolled]:hover:text-white">Events</a>
-                    <a href="#meals" class="text-sm font-medium uppercase tracking-wider transition-colors duration-300 text-white/90 hover:text-white group-[.scrolled]:text-navira-orangeLight group-[.scrolled]:hover:text-white">Meals</a>
-                    <a href="#about" class="text-sm font-medium uppercase tracking-wider transition-colors duration-300 text-white/90 hover:text-white group-[.scrolled]:text-navira-orangeLight group-[.scrolled]:hover:text-white">About</a>
-                    
-                    <!-- Contact Button: Orange background initially, White background with Teal text when scrolled (for contrast) -->
-                    <a href="#contact" class="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl bg-navira-orange text-white hover:bg-orange-600 group-[.scrolled]:bg-white group-[.scrolled]:text-navira-teal group-[.scrolled]:hover:bg-navira-orangeLight">Contact</a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="focus:outline-none text-white hover:text-navira-orangeLight transition-colors duration-300 group-[.scrolled]:text-navira-orangeLight">
-                        <i data-lucide="menu" class="h-8 w-8"></i>
-                    </button>
-                </div>
-            </div>
+  <!-- NAVIGATION -->
+  <nav class="fixed w-full z-50 transition-all duration-500 bg-transparent group overflow-hidden" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20 transition-all duration-300 group-[.scrolled]:h-16">
+        <!-- Logo: REPLACED WITH IMAGE PLACEHOLDER ONLY -->
+        <div class="flex-shrink-0 flex items-center gap-2">
+          <!-- Large responsive logo placeholder - ONLY image (no text) -->
+          <a href="#home" aria-label="Navira Home">
+            <img id="nav-logo" src="navira-.png" alt="Navira logo (replace with SVG/PNG)" />
+          </a>
         </div>
 
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg z-40">
-            <div class="px-4 pt-2 pb-6 space-y-1">
-                <a href="#home" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-navira-teal hover:bg-gray-50 rounded-md">Home</a>
-                <a href="#community" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-navira-teal hover:bg-gray-50 rounded-md">Community</a>
-                <a href="#events" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-navira-teal hover:bg-gray-50 rounded-md">Events</a>
-                <a href="#meals" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-navira-teal hover:bg-gray-50 rounded-md">Meals</a>
-                <a href="#about" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-navira-teal hover:bg-gray-50 rounded-md">About</a>
-                <a href="#contact" class="block px-3 py-3 text-base font-medium text-navira-orange font-bold">Contact Us</a>
-            </div>
-        </div>
-    </nav>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 items-center">
+          <a href="#home" class="text-sm font-medium uppercase tracking-wider transition-colors duration-300 text-white/90 hover:text-white group-[.scrolled]:text-navira-orangeLight group-[.scrolled]:hover:text-white">Home</a>
+          <a href="#community" class="text-sm font-medium uppercase tracking-wider transition-colors duration-300 text-white/90 hover:text-white group-[.scrolled]:text-navira-orangeLight group-[.scrolled]:hover:text-white">Community</a>
+          <a href="#events" class="text-sm font-medium uppercase tracking-wider transition-colors duration-300 text-white/90 hover:text-white group-[.scrolled]:text-navira-orangeLight group-[.scrolled]:hover:text-white">Events</a>
+          <a href="#meals" class="text-sm font-medium uppercase tracking-wider transition-colors duration-300 text-white/90 hover:text-white group-[.scrolled]:text-navira-orangeLight group-[.scrolled]:hover:text-white">Meals</a>
+          <a href="#about" class="text-sm font-medium uppercase tracking-wider transition-colors duration-300 text-white/90 hover:text-white group-[.scrolled]:text-navira-orangeLight group-[.scrolled]:hover:text-white">About</a>
 
-    <!-- HERO SECTION (Video Carousel) -->
-    <!-- Changed h-screen to h-[100dvh] for better mobile browser support -->
-    <section id="home" class="relative h-[100dvh] w-full overflow-hidden flex items-center justify-center">
-        
-        <!-- Video 1: Community (Nature/Group) -->
-        <div class="carousel-slide active" data-index="0">
-            <video autoplay muted loop playsinline class="absolute w-full h-full object-cover">
-                <source src="14668828_3840_2160_60fps.mp4" type="video/mp4">
-            </video>
-            <div class="absolute inset-0 bg-black/40"></div>
+          <a href="#contact" class="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl bg-navira-orange text-white hover:bg-orange-600 group-[.scrolled]:bg-white group-[.scrolled]:text-navira-teal group-[.scrolled]:hover:bg-navira-orangeLight">Contact</a>
         </div>
 
-        <!-- Video 2: Events (Meditation/Wellness) -->
-        <div class="carousel-slide" data-index="1">
-            <video autoplay muted loop playsinline class="absolute w-full h-full object-cover">
-                <source src="Navira_Events_Vision_Imagery_Clip.mp4" type="video/mp4">
-            </video>
-            <div class="absolute inset-0 bg-black/40"></div>
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="focus:outline-none text-white hover:text-navira-orangeLight transition-colors duration-300 group-[.scrolled]:text-navira-orangeLight">
+            <i data-lucide="menu" class="h-8 w-8"></i>
+          </button>
         </div>
+      </div>
+    </div>
 
-        <!-- Video 3: Meals (Healthy Food) -->
-        <div class="carousel-slide" data-index="2">
-            <video autoplay muted loop playsinline class="absolute w-full h-full object-cover">
-                <source src="5865847-uhd_3840_2160_25fps.mp4" type="video/mp4">
-            </video>
-            <div class="absolute inset-0 bg-black/40"></div>
-        </div>
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg z-40">
+      <div class="px-4 pt-2 pb-6 space-y-1">
+        <a href="#home" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-navira-teal hover:bg-gray-50 rounded-md">Home</a>
+        <a href="#community" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-navira-teal hover:bg-gray-50 rounded-md">Community</a>
+        <a href="#events" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-navira-teal hover:bg-gray-50 rounded-md">Events</a>
+        <a href="#meals" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-navira-teal hover:bg-gray-50 rounded-md">Meals</a>
+        <a href="#about" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-navira-teal hover:bg-gray-50 rounded-md">About</a>
+        <a href="#contact" class="block px-3 py-3 text-base font-medium text-navira-orange font-bold">Contact Us</a>
+      </div>
+    </div>
+  </nav>
 
-        <!-- Content Overlay -->
-        <!-- Added pb-24 to lift content above carousel dots, increased side padding to px-8 -->
-        <div class="relative z-10 text-center px-8 md:px-4 max-w-4xl mx-auto pt-16 pb-24">
-            <!-- Adjusted font size for mobile -->
-            <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-4 leading-tight drop-shadow-lg">
-                Live Well. <br>Eat Mindfully. <br>Grow Consciously.
-            </h1>
-            <p class="text-sm sm:text-base md:text-xl text-gray-100 mb-8 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
-                At Navira Life Essentials, we believe wellness begins with awareness. We nurture your journey through healthy meals, mindful experiences, and a community that uplifts you — naturally.
-            </p>
-            
-            <!-- Hero CTAs (Stacked on mobile, row on desktop) -->
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full">
-                <a href="#community" class="w-full sm:w-auto px-8 py-4 bg-navira-teal/90 backdrop-blur-sm border border-navira-teal text-white rounded-full font-semibold hover:bg-white hover:text-navira-teal transition-all shadow-lg transform hover:-translate-y-1 text-sm md:text-base">
-                    Join the Navira Community
-                </a>
-                <a href="#events" class="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-navira-teal transition-all shadow-lg text-sm md:text-base">
-                    Explore Wellness Events
-                </a>
-                <a href="#meals" class="w-full sm:w-auto px-8 py-4 bg-navira-orange/90 backdrop-blur-sm text-white rounded-full font-semibold hover:bg-orange-700 transition-all shadow-lg transform hover:-translate-y-1 text-sm md:text-base">
-                    Order Healthy Meals
-                </a>
-            </div>
-        </div>
-        
-        <!-- Carousel Indicators -->
-        <div class="absolute bottom-8 left-0 right-0 flex justify-center space-x-3 z-20">
-            <button class="w-3 h-3 rounded-full bg-white/50 active-indicator transition-all" onclick="setSlide(0)"></button>
-            <button class="w-3 h-3 rounded-full bg-white/50 transition-all" onclick="setSlide(1)"></button>
-            <button class="w-3 h-3 rounded-full bg-white/50 transition-all" onclick="setSlide(2)"></button>
-        </div>
-    </section>
+  <!-- HERO SECTION (Video Carousel) -->
+  <section id="home" class="relative h-[100dvh] w-full overflow-hidden flex items-center justify-center">
+    <!-- Video slides (unchanged) -->
+    <div class="carousel-slide active" data-index="0">
+      <video autoplay muted loop playsinline class="absolute w-full h-full object-cover">
+        <source src="NAIRA1.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+    <div class="carousel-slide" data-index="1">
+      <video autoplay muted loop playsinline class="absolute w-full h-full object-cover">
+        <source src="Navira_Events_Vision_Imagery_Clip.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+    <div class="carousel-slide" data-index="2">
+      <video autoplay muted loop playsinline class="absolute w-full h-full object-cover">
+        <source src="5865847-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute inset-0 bg-black/40"></div>
+    </div>
+
+    <!-- Content Overlay -->
+    <div class="relative z-10 text-center px-8 md:px-4 max-w-4xl mx-auto pt-16 pb-24">
+      <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-4 leading-tight drop-shadow-lg">
+        Live Well. <br />Eat Mindfully. <br />Grow Consciously.
+      </h1>
+      <p class="text-sm sm:text-base md:text-xl text-gray-100 mb-8 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
+        At Navira Life Essentials, we believe wellness begins with awareness. We nurture your journey through healthy meals, mindful experiences, and a community that uplifts you — naturally.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full">
+        <a href="#community" class="w-full sm:w-auto px-8 py-4 bg-navira-teal/90 backdrop-blur-sm border border-navira-teal text-white rounded-full font-semibold hover:bg-white hover:text-navira-teal transition-all shadow-lg transform hover:-translate-y-1 text-sm md:text-base">Join the Navira Community</a>
+        <a href="#events" class="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-navira-teal transition-all shadow-lg text-sm md:text-base">Explore Wellness Events</a>
+        <a href="#meals" class="w-full sm:w-auto px-8 py-4 bg-navira-orange/90 backdrop-blur-sm text-white rounded-full font-semibold hover:bg-orange-700 transition-all shadow-lg transform hover:-translate-y-1 text-sm md:text-base">Order Healthy Meals</a>
+      </div>
+    </div>
+
+    <!-- Carousel Indicators -->
+    <div class="absolute bottom-8 left-0 right-0 flex justify-center space-x-3 z-20">
+      <button class="w-3 h-3 rounded-full bg-white/50 active-indicator transition-all" onclick="setSlide(0)"></button>
+      <button class="w-3 h-3 rounded-full bg-white/50 transition-all" onclick="setSlide(1)"></button>
+      <button class="w-3 h-3 rounded-full bg-white/50 transition-all" onclick="setSlide(2)"></button>
+    </div>
+  </section>
 
     <!-- SECTION 1: ABOUT NAVIRA -->
     <!-- Reduced vertical padding on mobile (py-12) -->
@@ -224,7 +225,7 @@
             <div class="order-1 md:order-2 relative fade-in-section">
                 <div class="w-full h-64 md:h-80 bg-navira-teal/10 organic-shape absolute top-4 -right-4 -z-10"></div>
                 <!-- Adjusted image height for mobile (h-64) -->
-                <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop" alt="Holistic Wellness" class="w-full h-64 md:h-80 object-cover organic-shape-2 shadow-xl">
+                <img src="about.jpg" alt="Holistic Wellness" class="w-full h-64 md:h-80 object-cover organic-shape-2 shadow-xl">
             </div>
         </div>
 
@@ -385,7 +386,7 @@
                 <div class="w-full lg:w-1/2 relative">
                     <div class="absolute inset-0 bg-green-200/40 rounded-full blur-3xl transform -translate-x-10 translate-y-10"></div>
                      <!-- Reduced height for mobile: h-64 md:h-[500px] -->
-                    <img src="https://images.unsplash.com/photo-1543362906-ac1b452601e0?q=80&w=2070&auto=format&fit=crop" alt="Navira Meals" class="relative rounded-3xl shadow-2xl w-full object-cover h-64 md:h-[500px] organic-shape">
+                    <img src="meals.jpg" alt="Navira Meals" class="relative rounded-3xl shadow-2xl w-full object-cover h-64 md:h-[500px] organic-shape">
                     <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl shadow-lg border-l-4 border-navira-teal">
                         <p class="text-navira-teal font-serif italic text-base md:text-lg">“Healthy Food, Mindful Living.”</p>
                     </div>
@@ -498,112 +499,96 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="bg-navira-teal py-8 text-center text-white/80 border-t border-white/10">
-        <div class="px-4">
-            <p class="font-serif italic text-base md:text-lg mb-4">Navira Life Essentials — Where Wellness Becomes a Way of Life.</p>
-            <p class="text-xs md:text-sm opacity-60">&copy; 2025 Navira Life Essentials Pvt. Ltd. All rights reserved.</p>
+    <footer class="bg-white mt-8 border-t border-gray-100">
+      <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-600">
+        <div>© 2025 Navira Life Essentials Pvt. Ltd.</div>
+        <div class="flex gap-4">
+          <a href="privacy.html" class="text-[var(--navira-teal)] font-semibold">Privacy Policy</a>
+          <a href="cookie.html" class="hover:underline">Cookie Policy</a>
+          <a href="terms.html" class="hover:underline">Terms & Conditions</a>
         </div>
+      </div>
     </footer>
 
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
+     <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
 
-        // --- Mobile Menu Logic ---
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const navbar = document.getElementById('navbar');
+    // --- Mobile Menu Logic ---
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const navbar = document.getElementById('navbar');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+    // Close menu when clicking a link
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+      });
+    });
 
-        // Close menu when clicking a link
-        menu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
-        });
+    // Navbar Transition Effect on Scroll
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        // Add 'scrolled' class to trigger Tailwind group modifiers
+        navbar.classList.add('scrolled', 'bg-navira-teal', 'shadow-md');
+        navbar.classList.remove('bg-transparent');
+      } else {
+        // Remove 'scrolled' class to revert to transparent/white navbar
+        navbar.classList.remove('scrolled', 'bg-navira-teal', 'shadow-md');
+        navbar.classList.add('bg-transparent');
+      }
+    });
 
-        // Navbar Transition Effect on Scroll
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                // Add 'scrolled' class to trigger Tailwind group modifiers
-                navbar.classList.add('scrolled', 'bg-navira-teal', 'shadow-md');
-                navbar.classList.remove('bg-transparent');
-            } else {
-                // Remove 'scrolled' class to revert to transparent/white
-                navbar.classList.remove('scrolled', 'bg-navira-teal', 'shadow-md');
-                navbar.classList.add('bg-transparent');
-            }
-        });
+    // --- Video Carousel Logic ---
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const indicators = document.querySelectorAll('.absolute.bottom-8 button');
+    const totalSlides = slides.length;
+    const intervalTime = 5000; // 5 seconds
 
-        // --- Video Carousel Logic ---
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const indicators = document.querySelectorAll('.absolute.bottom-8 button');
-        const totalSlides = slides.length;
-        const intervalTime = 5000; // 5 seconds
+    function setSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      indicators.forEach(ind => { ind.classList.remove('bg-white', 'scale-125'); ind.classList.add('bg-white/50'); });
+      currentSlide = index;
+      slides[currentSlide].classList.add('active');
+      indicators[currentSlide].classList.remove('bg-white/50');
+      indicators[currentSlide].classList.add('bg-white', 'scale-125');
+    }
 
-        function setSlide(index) {
-            // Remove active class from all
-            slides.forEach(slide => slide.classList.remove('active'));
-            indicators.forEach(ind => {
-                ind.classList.remove('bg-white', 'scale-125');
-                ind.classList.add('bg-white/50');
-            });
+    function nextSlide() {
+      let next = (currentSlide + 1) % totalSlides;
+      setSlide(next);
+    }
 
-            // Set active class
-            currentSlide = index;
-            slides[currentSlide].classList.add('active');
-            
-            // Update indicator
-            indicators[currentSlide].classList.remove('bg-white/50');
-            indicators[currentSlide].classList.add('bg-white', 'scale-125');
+    let slideInterval = setInterval(nextSlide, intervalTime);
+    indicators.forEach((ind, i) => {
+      ind.addEventListener('click', () => {
+        setSlide(i);
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, intervalTime);
+      });
+    });
+
+    setSlide(0);
+
+    // --- Intersection Observer for Scroll Animations ---
+    const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-up');
+          observer.unobserve(entry.target);
         }
-
-        function nextSlide() {
-            let next = (currentSlide + 1) % totalSlides;
-            setSlide(next);
-        }
-
-        // Start Auto Slide
-        let slideInterval = setInterval(nextSlide, intervalTime);
-
-        // Optional: Pause on hover? (Not requested, but good UX. Keeping simple for now)
-        // Reset timer on manual click
-        indicators.forEach((ind, i) => {
-            ind.addEventListener('click', () => {
-                setSlide(i);
-                clearInterval(slideInterval);
-                slideInterval = setInterval(nextSlide, intervalTime);
-            });
-        });
-
-        // Initialize first indicator
-        setSlide(0);
-
-        // --- Intersection Observer for Scroll Animations ---
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in-section').forEach(el => {
-            el.style.opacity = '0'; // Hide initially
-            observer.observe(el);
-        });
-
-    </script>
+      });
+    }, observerOptions);
+    document.querySelectorAll('.fade-in-section').forEach(el => {
+      el.style.opacity = '0';
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
